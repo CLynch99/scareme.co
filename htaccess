@@ -1,0 +1,9 @@
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW SSL_REDIRECT:scareme.co
+RewriteEngine on
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^scareme.co$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE SSL_REDIRECT:scareme.co
